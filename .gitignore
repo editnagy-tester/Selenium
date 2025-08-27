@@ -1,0 +1,12 @@
+# User-specific files
+.vs/
+*.suo
+*.user
+
+# Build results
+[Dd]ebug/
+[Rr]elease/
+*.dll
+*.exe
+bin/
+obj/
