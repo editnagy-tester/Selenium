@@ -25,7 +25,7 @@ namespace SeleniumProject.Hooks
             driver.Navigate().GoToUrl("https://www.linkedin.com/");
 
             AcceptCookies();
-            LogIn("smallcatnip@gmail.com", "Badcatnip123");
+            LogIn("smallcatnip@gmail.com", "Badcatnip123"); //test profile for linkedin
         }
 
         //[SetUp]
@@ -59,6 +59,9 @@ namespace SeleniumProject.Hooks
             passwordField.SendKeys(password);
             var submitButton = driver.FindElement(By.CssSelector("button[type='submit']"));
             submitButton.Click();
+
+            //check if it was successful and header is visible
+            var header = wait.Until(d => d.FindElement(By.ClassName("global-nav__content")));
 
         }
     }

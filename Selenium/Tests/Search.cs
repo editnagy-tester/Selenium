@@ -1,4 +1,6 @@
-﻿using SeleniumProject.Hooks;
+﻿using OpenQA.Selenium.BiDi.Network;
+using SeleniumProject.Hooks;
+using SeleniumProject.Sections;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,11 +11,17 @@ namespace SeleniumProject.Tests
 {
     public class Search : TestBase
     {
+        private HeaderSection header;
 
+        [SetUp]
+        public void Setup()
+        {
+            header = new HeaderSection(driver);
+        }
         [Test]
         public void SearchForJobs()
         {
-            // Test implementation goes here
+           header.TypeSearchTextAndPressEnter("QA Engineer");
         }
     }
 }
